@@ -1,0 +1,20 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.1                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType      hPsiThermo<pureMixture<constTransport<specieThermo<hConstThermo<Boussinesq>>>>>;
+mixture         PCM 1 200.32 912 298 9e-5 2285 0 6.11e-3 93.1;// name nMoles(number) molWeight[kg/kmol] rho0 T0 beta Cp[] hf mu pr
+
+// ************************************************************************* //

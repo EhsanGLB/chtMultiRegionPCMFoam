@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Golab"
+  given-names: "Ehsan"
+  orcid: "https://orcid.org/0000-0002-6105-0963"
+title: "chtMultiRegionPCMFoam"
+version: 1.0.0
+date-released: 2023-08-03
+url: "https://github.com/EhsanGLB/chtMultiRegionPCMFoam"
