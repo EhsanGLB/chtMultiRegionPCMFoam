@@ -1,0 +1,243 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.1                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      changePatchTypeDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dictionaryReplacement
+{
+    U
+    {
+        internalField   uniform (0.01 0 0);
+        boundaryField
+        {
+            top
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+
+            bottom
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+
+            left
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+
+            right
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+
+            chamber_to_leftSolid
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+
+            chamber_to_rightSolid
+            {
+                type            fixedValue;
+                value           uniform (0 0 0);
+            }
+        }
+    }
+
+    T
+    {
+        internalField   uniform 300;
+        boundaryField
+        {
+            top
+            {
+                type            zeroGradient;
+            }
+
+            bottom
+            {
+                type            zeroGradient;
+            }
+
+            left
+            {
+                type            zeroGradient;
+            }
+
+            right
+            {
+                type            zeroGradient;
+            }
+
+            chamber_to_leftSolid
+            {
+                type            solidWallMixedTemperatureCoupled;
+                neighbourRegionName leftSolid;
+                neighbourPatchName leftSolid_to_chamber;
+                neighbourFieldName T;
+                Kappa           Kappa;
+                value           uniform 300;
+            }
+
+            chamber_to_rightSolid
+            {
+                type            solidWallMixedTemperatureCoupled;
+                neighbourRegionName rightSolid;
+                neighbourPatchName rightSolid_to_chamber;
+                neighbourFieldName T;
+                Kappa           Kappa;
+                value           uniform 300;
+            }
+        }
+    }
+
+    epsilon
+    {
+        // Set the value on all bc to non-zero. Not used in simulation
+        // since zeroGradient; only used in initialisation.
+        internalField   uniform 0.01;
+
+        boundaryField
+        {
+            top
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+
+            bottom
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+
+            left
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+
+            right
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+
+            chamber_to_leftSolid
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+
+            chamber_to_rightSolid
+            {
+                type            zeroGradient;
+                value           uniform 0.01;
+            }
+        }
+    }
+
+    k
+    {
+        internalField   uniform 0.1;
+        boundaryField
+        {
+            top
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+
+            bottom
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+
+            left
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+
+            right
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+
+            chamber_to_leftSolid
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+
+            chamber_to_rightSolid
+            {
+                type            zeroGradient;
+                value           uniform 0.1;
+            }
+        }
+    }
+
+    p
+    {
+        boundaryField
+        {
+            top
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+
+            bottom
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+
+            left
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+
+            right
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+
+            chamber_to_leftSolid
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+
+            chamber_to_rightSolid
+            {
+                type            buoyantPressure;
+                value           uniform 1e+05;
+            }
+        }
+    }
+
+}
+
+
+// ************************************************************************* //
