@@ -1,2 +1,0 @@
-    p.storePrevIter();
-    rho.storePrevIter();
