@@ -1,0 +1,21 @@
+EXE_INC = \
+    -Ifluid \
+    -Isolid \
+    -IregionProperties \
+    -Iinclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/turbulenceModels/compressible/turbulenceModel \
+    -I../../../src/thermophysicalModels/specie/lnInclude \
+    -I../../../src/thermophysicalModels/basic/lnInclude
+
+EXE_LIBS = \
+    -lmeshTools \
+    -lcompressibleTurbulenceModel \
+    -lcompressibleRASModels \
+    -lcompressibleLESModels \
+    -lfiniteVolume \
+    -llduSolvers \
+    -L$(FOAM_USER_LIBBIN) \
+    -lspecie \
+    -lbasicThermophysicalModels
