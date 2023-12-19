@@ -15,6 +15,6 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 thermoType      hPsiThermo<pureMixture<constTransport<specieThermo<hConstThermo<Boussinesq>>>>>;
-mixture         PCM 1 200.32 912 298 9e-5 2285 0 6.11e-3 93.1;// name nMoles(number) molWeight[kg/kmol] rho0 T0 beta Cp[] hf mu pr
+mixture         PCM 1 200.32 912 298 9e-5 2285 0 6.11e-3 93.1;// name nMoles(number) molWeight[kg/kmol] rho0[kg/m3] T0[K] beta[1/K[ Cp[J/Kg.K] hf[J/kg] mu[kg/m.s] Pr[-]
 
 // ************************************************************************* //
