@@ -19,20 +19,12 @@ And $\rho$, $\nu$, $\beta$, $C_p$, $h$, $k$, $T_m$, $T_s$, and $T_l$  are densit
 It is working on foam-extend-4.1
 ```bash
 git clone https://github.com/EhsanGLB/chtMultiRegionPCMFoam.git
-cd chtMultiRegionPCMFoam/chtMultiRegionPCMFoam
-wmake
-cd ../case
+cd chtMultiRegionPCMFoam
+Allwmake
 ```
 
 
 ## Getting Started
-1. First way
-```bash
-blockMEsh
-chtMultiRegionPCMFoam
-```
-
-2. Second way
 ```bash
 ./Allrun
 ```
